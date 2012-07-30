@@ -1,7 +1,7 @@
 <div class="content_block">
     <h1>{$lang['viewing_ticket']}</h1>
-    {if $error}<div class="critical">{$error}</div>{/if}
-    {if $alert}<div class="alert">{$alert}</div>{/if}
+    {if $error}<div class="critical" data-dismiss="alert">{$error}</div>{/if}
+    {if $alert}<div class="alert" data-dismiss="alert">{$alert}</div>{/if}
     <div class="groupbox">
         <div style="float:right">
             <a href="{$td_url}/index.php?page=tickets&amp;act=print&amp;id={$t['mask']}">{$lang['print']}</a>
@@ -11,7 +11,7 @@
         </div>
         {$t['subject']}
     </div>
-    <table width="100%" cellpadding="0" cellspacing="0">
+    <table class="table table-striped">
     <tr>
         <td class="option1-med" width="20%">{$lang['ticket_id']}</td>
         <td class="row1-med" width="30%">{if $t['escalated']}<img src="{$img_url}/icon_escalate.png" alt="E" style="vertical-align:middle;margin-bottom:2px" />&nbsp;{/if}{$t['mask']}</td>
@@ -96,7 +96,7 @@
     {if $upload_form}
     <div class="option2">{$upload_form}</div>
     {/if}
-    <div class="formtail"><input type="submit" name="submit" id="send" value="{$lang['send_reply_button']}" class="button" /></div>
+    <div class="formtail"><input type="submit" name="submit" id="send" value="{$lang['send_reply_button']}" class="btn" /></div>
     </form>
     {/if}
 </div>

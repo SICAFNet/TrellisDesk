@@ -1,5 +1,6 @@
 <div class="content_block">
     <h1>{$lang['news']}</h1>
+    <hr>
     {if $news}
     {foreach $news as $n}
     <div class="groupbox"><div style="float:right">{$n['date_human']}</div><a href="{$td_url}/index.php?page=news&amp;act=view&amp;id={$n['id']}">{$n['title']}</a></div>

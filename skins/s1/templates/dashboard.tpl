@@ -1,50 +1,47 @@
-<div class="content_block">
-    <table width="100%" cellpadding="0" cellspacing="0">
-    <tr>
-        <td width="1%" style="padding:0 8px 7px 8px">
-            <a href="{$td_url}/index.php?page=tickets&amp;act=add"><img src="{$img_url}/ticket_icon.gif" alt="{$lang['open_ticket']}" /></a>
-        </td>
-        <td width="46%">
-            <span class="blbig"><a href="{$td_url}/index.php?page=tickets&amp;act=add">{$lang['open_ticket']}</a></span>
-        </td>
-        {if $cache['settings']['kb']['enable'] && $user['g_kb_access']}
-        <td width="1%" style="padding:0 8px 7px 8px">
-            <a href="{$td_url}/index.php?page=kb"><img src="{$img_url}/kb_icon.gif" alt="{$lang['knowledge_base']}" /></a>
-        </td>
-        <td width="52%">
-            <span class="blbig"><a href="{$td_url}/index.php?page=kb">{$lang['knowledge_base']}</a></span>
-        </td>
-        {else}
-        <td width="1%" style="padding:0 8px 7px 8px">
-            <a href="{$td_url}/index.php?page=tickets&amp;act=history"><img src="{$img_url}/kb_icon.gif" alt="{$lang['ticket_history']}" /></a>
-        </td>
-        <td width="52%">
-            <span class="blbig"><a href="{$td_url}/index.php?page=tickets&amp;act=history">{$lang['ticket_history']}</a></span>
-        </td>
-        {/if}
-    </tr>
+
+ 
+ <div class="row">
+      <div class="span3"><a href="{$td_url}/index.php?page=tickets&amp;act=add"><i class="icon-file"></i> {$lang['open_ticket']}</a></div>
+      <div class="span3"> 
+  {if $cache['settings']['kb']['enable'] && $user['g_kb_access']}
+      <a href="{$td_url}/index.php?page=kb"><i class="icon-search"></i> {$lang['knowledge_base']}</a>
+  {else} 
+      <a href="{$td_url}/index.php?page=tickets&amp;act=history"><i class="icon-search"></i> {$lang['ticket_history']}</a>
+      <a href="{$td_url}/index.php?page=tickets&amp;act=history">{$lang['ticket_history']}</a>
+ {/if} 
+  </div>
+</div>
+   <hr>
+
+
+<div class="row">
+<div class="span7">
     {if $news}
-    <tr>
-        <td colspan="4">
-            <div class="groupbox">{if $cache['settings']['news']['page']}<a href="{$td_url}/index.php?page=news">{/if}{$lang['news']}{if $cache['settings']['news']['page']}</a>{/if}</div>
+
+          <h3>{if $cache['settings']['news']['page']}<a href="{$td_url}/index.php?page=news">{/if}{$lang['news']}{if $cache['settings']['news']['page']}</a>{/if}</h3>
             {foreach $news as $n}
-            <div class="subbox">{if $cache['settings']['news']['page']}<a href="{$td_url}/index.php?page=news&amp;act=view&amp;id={$n['id']}">{/if}{$n['title']}{if $cache['settings']['news']['page']}</a>{/if}<span class="date"> -- {$n['date_human']}</span></div>
-            <div class="row1">
+            {if $cache['settings']['news']['page']}<a href="{$td_url}/index.php?page=news&amp;act=view&amp;id={$n['id']}">{/if}{$n['title']}{if $cache['settings']['news']['page']}</a>{/if}<span class="date"> -- {$n['date_human']}</span>
+
                 {if $n['excerpt']}
                 {$n['excerpt']}
                 {else}
                 {if $cache['settings']['news']['page']}<a href="{$td_url}/index.php?page=news&amp;act=view&amp;id={$n['id']}">{$lang['read_on']}</a>{else}<i>{$lang['no_excerpt']}</i>{/if}
                 {/if}
-            </div>
+
             {/foreach}
             <br />
-        </td>
-    </tr>
+
     {/if}
-    <tr>
-        <td colspan="4">
-            <div class="groupbox">{$lang['tickets_overview']}</div>
-            <table width="100%" cellpadding="3" cellspacing="0" class="smtable">
+    
+    <hr>
+</div>
+</div>
+    
+    
+
+            <h3>{$lang['tickets_overview']}</h3>
+            <br />
+            <table class="table table-striped">
             <tr>
                 <th width="5%" align="left">{$lang['id']}</th>
                 <th width="27%" align="left">{$lang['subject']}</th>
@@ -82,4 +79,3 @@
         </td>
     </tr>
     </table>
-</div>

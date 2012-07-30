@@ -85,7 +85,7 @@
     {if $upload_form}
     
     {/if}
-    <div class="formtail"><input type="submit" name="submit" id="send" value="{$lang['open_ticket_button']}" class="button" /></div>
+    <div class="formtail"><input type="submit" name="submit" id="send" value="{$lang['open_ticket_button']}" class="btn" /></div>
     </form>
 </div>
 <script type="text/javascript">

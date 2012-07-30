@@ -1,8 +1,10 @@
-<div class="content_block">
+
     <h1>{$lang['my_account']}</h1>
+    
     {if $alert}<div class="alert">{$alert}</div>{/if}
+    
     <div class="groupbox">{$lang['account_overview']}</div>
-    <table width="100%" cellpadding="0" cellspacing="0">
+    <table class="table table-striped">
     <tr>
         <td class="option1" width="20%">{$lang['username']}</td>
         <td class="row1" width="80%">{$user['name']}</td>
@@ -49,5 +51,4 @@
     {/foreach}
     {/if}
     </table>
-    <div class="formtail"><div class="fb_pad"><a href="{$td_url}/index.php?page=account&amp;act=edit" class="fake_button">{$lang['modify_account']}</a>&nbsp;&nbsp;<a href="{$td_url}/index.php?page=account&amp;act=email" class="fake_button">{$lang['change_email']}</a>&nbsp;&nbsp;<a href="{$td_url}/index.php?page=account&amp;act=pass" class="fake_button">{$lang['change_password']}</a></div></div>
-</div>
+   <a href="{$td_url}/index.php?page=account&amp;act=edit" class="btn">{$lang['modify_account']}</a>&nbsp;&nbsp;<a href="{$td_url}/index.php?page=account&amp;act=email" class="btn">{$lang['change_email']}</a>&nbsp;&nbsp;<a href="{$td_url}/index.php?page=account&amp;act=pass" class="btn">{$lang['change_password']}</a>

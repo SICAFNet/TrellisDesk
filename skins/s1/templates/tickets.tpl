@@ -1,14 +1,15 @@
 <div class="content_block">
     <h1>{$lang['tickets']}</h1>
-    <div class="groupbox">{$lang['ticket_list']}</div>
-    <table width="100%" cellpadding="0" cellspacing="0">
+    <br />
+
+    <table class="table table-striped">
     <tr>
-        <th width="5%" align="left">{$lang['id']}</th>
-        <th width="27%" align="left">{$lang['subject']}</th>
-        <th width="14%" align="left">{$lang['priority']}</th>
-        <th width="20%" align="left">{$lang['department']}</th>
-        <th width="20%" align="left">{$lang['last_reply']}</th>
-        <th width="14%" align="left">{$lang['status']}</th>
+        <th>{$lang['id']}</th>
+        <th>{$lang['subject']}</th>
+        <th>{$lang['priority']}</th>
+        <th>{$lang['department']}</th>
+        <th>{$lang['last_reply']}</th>
+        <th>{$lang['status']}</th>
     </tr>
     {if $tickets}
     {foreach $tickets as $t}
@@ -24,7 +25,9 @@
     </tr>
     {/foreach}
     <tr>
-        <td class="pagelinks" colspan="6">{$page_links}</td>
+        <td class="pagination" colspan="6">{$page_links}</td>
+        
+
     </tr>
     {else}
     <tr>
